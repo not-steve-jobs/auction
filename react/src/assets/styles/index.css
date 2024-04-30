@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.service_status_block {
+  @apply flex items-center justify-center font-mardoto text-[14px] font-medium leading-normal text-white w-[91px] h-[30px] rounded-[16px];
+}
+.ant-input,
+.ant-input-affix-wrapper {
+  @apply border-[#667085] shadow-none;
+}
+.ant-input:hover,
+.ant-input:focus,
+.ant-input-affix-wrapper:hover,
+.ant-input-affix-wrapper:focus {
+  @apply border-[#667085] shadow-none;
+}
+.ant-col-24.ant-form-item-label {
+  padding: 0;
+}

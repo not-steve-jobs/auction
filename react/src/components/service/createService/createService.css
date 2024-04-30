@@ -1,0 +1,44 @@
+.ant-select-selector,
+.ant-input {
+  @apply !border-[#667085] !shadow-none;
+}
+
+.ant-select-selector:hover,
+.ant-select-selector:focus,
+.ant-input:hover,
+.ant-input:focus {
+  @apply !border-[#667085] !shadow-none;
+}
+
+.ant-form-item {
+  @apply !mb-0;
+}
+
+.root_portfolio_table {
+  @apply mt-[24px];
+}
+
+.root_portfolio_table .ant-table-cell {
+  @apply border-none !p-0 !px-[12px];
+}
+
+.root_portfolio_table .ant-table-cell:before {
+  display: none;
+}
+
+.root_portfolio_table .ant-table-tbody .ant-table-cell {
+  @apply bg-[#f1f1f1] !py-[10px];
+}
+
+.root_portfolio_table .ant-table-thead,
+.ant-table-tbody {
+  @apply h-[44px];
+}
+
+.root_portfolio_table .ant-table-tbody tr {
+  @apply cursor-pointer;
+}
+
+.root_portfolio_table .ant-table-thead .ant-table-cell {
+  @apply bg-[#D4D8DB];
+}

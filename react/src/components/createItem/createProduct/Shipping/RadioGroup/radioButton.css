@@ -1,0 +1,37 @@
+.App {
+  font-family: "Mardoto", "sans-serif";
+}
+
+.radio-custom .ant-radio-wrapper {
+  border: 1px solid #1f598e;
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.radio-custom .ant-radio-wrapper-checked {
+  border: 2px solid #1f598e;
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.radio-custom .ant-radio {
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}
+
+.ant-radio-wrapper span.ant-radio + * {
+  font-family: Mardoto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* letter-spacing: 0em; */
+  color: #1f598e;
+}
+.radio-custom .ant-radio + * {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+}

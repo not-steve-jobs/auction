@@ -1,0 +1,101 @@
+.test {
+  background-color: red !important;
+}
+
+.ant-modal-title {
+  font-size: 32px !important;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 261px;
+  margin-top: 24px;
+  align-items: baseline;
+}
+
+.item {
+  width: 165px;
+  height: 224px;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: #1f598e;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  display: inline-flex;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-family: Mardoto;
+  font-weight: 500;
+  line-height: 20px;
+  word-wrap: break-word;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.categoryItem {
+  display: flex !important;
+}
+
+.breadcrumbArrow {
+  width: auto;
+  height: 14px;
+  align-self: center;
+  margin: 4px 4px 0 4px;
+  box-sizing: border-box;
+}
+
+.itemText {
+  width: 133px;
+}
+
+.item:hover {
+  background-color: #f4b405;
+  width: 200px;
+  height: 261px;
+}
+
+.itemTitle {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.ant-list {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.categories {
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+}
+
+.categoriesSearch {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  color: #1f598e !important;
+  border-color: #1f598e !important;
+}
+
+.backButtonLhover {
+  color: #fff !important;
+  border-color: #1fff !important;
+}
+
+.breadcrumbsWrapper {
+  display: flex;
+  flex-direction: row;
+}

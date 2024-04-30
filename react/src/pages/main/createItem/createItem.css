@@ -1,0 +1,25 @@
+.select_outline .ant-select-selection-placeholder {
+  @apply text-[#1f598e] font-mardoto text-[16px] leading-[19px] font-bold p-0;
+}
+
+/* Change the arrow color */
+.select_outline.ant-select .ant-select-arrow .anticon > svg {
+  @apply text-[#1f598e]  !important;
+}
+
+.select_outline.ant-select-single .ant-select-selector {
+  @apply p-0  !important;
+}
+
+.select_outline.ant-select.ant-select-in-form-item {
+  @apply w-[297px];
+}
+.custom-radio .ant-radio-wrapper .ant-radio-inner {
+  @apply w-0 h-0 border-[transparent];
+}
+.custom-radio .ant-radio-wrapper .ant-radio-inner:active {
+  @apply w-0 h-0 border-[transparent];
+}
+.custom-radio .ant-form input[type="radio"]:focus {
+  @apply shadow-[transparent] outline-[none];
+}

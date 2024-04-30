@@ -1,0 +1,46 @@
+{
+  "name": "notification",
+  "version": "1.0.0",
+  "description": "notificationExpress",
+  "scripts": {
+    "start": "babel-node src/bin/www.js",
+    "dev": "babel-watch src/bin/www.js",
+    "migrate": "babel-node migrations/1_create_tables.js",
+    "alter": "babel-node migrations/alter.js",
+    "migrate-down": "babel-node migrations/1_drop_tables.js",
+    "seed": "babel-node seed/dev/seed.js",
+    "lint-no-fix": "eslint src/",
+    "lint": "eslint --fix src/"
+  },
+  "author": "Inpoint",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.6",
+    "babel-watch": "^7.8.1",
+    "eslint": "^7.9.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "dependencies": {
+    "@babel/node": "^7.18.10",
+    "@bemoje/is-object-null-prototype": "^1.0.1",
+    "@sendgrid/mail": "^7.7.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "regenerator-runtime": "^0.13.9",
+    "winston": "^3.6.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sam146148137/test-quiz.git"
+  },
+  "license": "ISC"
+}

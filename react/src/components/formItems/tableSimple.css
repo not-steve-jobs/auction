@@ -1,0 +1,29 @@
+.even-row {
+  border-bottom: 1px solid #d6d6d6;
+  background: linear-gradient(0deg, #f1f1f1 0%, #f1f1f1 100%), #fff;
+}
+.odd-row {
+  border-bottom: 1px solid #d6d6d6;
+  background: #fff;
+}
+
+.ant-table-wrapper .ant-table {
+  font-family: "Mardoto", sans-serif;
+}
+.simple-table.ant-table-wrapper .ant-table-tbody .ant-table-row > .ant-table-cell-row-hover {
+  background: transparent;
+}
+
+.simple-table.ant-table-wrapper .ant-table-thead > tr > th,
+.simple-table.ant-table-wrapper .ant-table-thead > tr > td {
+  background-color: #d6d6d6;
+  color: #000;
+}
+.ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not(
+    [colspan]
+  )::before {
+  width: 0;
+}

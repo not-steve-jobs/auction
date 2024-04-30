@@ -1,0 +1,17 @@
+.social_media_picker:hover,
+.ant-select-selector {
+    @apply !border-[#667085] !shadow-none;
+}
+
+.social_media_picker .ant-select-selector:hover,
+.ant-select-selector:focus {
+  @apply border-[#667085] shadow-none;
+}
+
+.social_media_picker .ant-select-arrow {
+  @apply text-[#667085];
+}
+
+.social_media_picker .ant-select-selection-item {
+  @apply text-[#232323] text-[14px] font-mardoto leading-normal;
+}

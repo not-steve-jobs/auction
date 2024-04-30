@@ -1,0 +1,182 @@
+version: "3.8"
+services:
+
+  react:
+      build: ./react
+      container_name: 'frontend'
+      networks:
+        - inpoint
+      volumes:
+        - ./react/src:/app/src
+      depends_on:
+        - authentication
+
+  authentication:
+      build: ./authentication
+      container_name: 'authentication'
+      networks:
+        - inpoint
+      restart: on-failure
+      depends_on:
+        - postgres
+        - redis
+      volumes:
+        - .files:/diskStorage
+
+  product:
+      build: ./product
+      container_name: 'product'
+      networks:
+        - inpoint
+      restart: on-failure
+      depends_on:
+        - postgres
+        - redis
+      ports:
+      - "2020:2020"
+      volumes:
+        - .files:/diskStorage
+
+  service:
+      build: ./service
+      container_name: 'service'
+      networks:
+        - inpoint
+      restart: on-failure
+      depends_on:
+        - postgres
+        - redis
+      ports:
+      - "4040:4040"
+      volumes:
+        - .files:/diskStorage
+
+  notification:
+    build: ./notification
+    container_name: 'notification'
+    networks:
+      - inpoint
+    restart: on-failure
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    volumes:
+      - .files:/diskStorage
+
+  postgres:
+    image: postgres:14
+    container_name: 'postgres'
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: mydb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - .files:/tmp/archive
+    restart: on-failure
+    networks:
+      - inpoint
+
+  redis:
+    image: redis:6.2-alpine
+    container_name: 'redis'
+    restart: on-failure
+    networks:
+      - inpoint
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - cache:/docker_cache
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: 'PgAdmin'
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    networks:
+      - inpoint
+
+  gateway:
+    image: nginx:alpine
+    container_name: 'gateway'
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./gateway/default.conf:/etc/nginx/conf.d/default.conf
+      - .files:/diskStorage
+    networks:
+      - inpoint
+    depends_on:
+      - authentication
+    restart: on-failure
+
+  elasticsearch:
+     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.2
+     environment:
+       - discovery.type=single-node
+       - 'ES_JAVA_OPTS=-Xms1024m -Xmx1024m'
+       - xpack.security.enabled=false
+       - xpack.security.transport.ssl.enabled=false
+       - xpack.security.http.ssl.enabled=false
+       - action.destructive_requires_name=false
+       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+     ulimits:
+       memlock:
+         soft: -1
+         hard: -1
+     ports:
+       - "9200:9200"
+     restart: always
+     volumes:
+       - elasticsearch_data:/usr/share/elasticsearch/data
+     networks:
+       - inpoint
+
+  kibana:
+     image: docker.elastic.co/kibana/kibana:8.4.2
+     environment:
+       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+     networks:
+       - inpoint
+     depends_on:
+       - elasticsearch
+     ports:
+       - "5601:5601"
+
+  elastic_module:
+     build: ./elastic_module
+     container_name: 'elastic_module'
+     networks:
+       - inpoint
+     restart: on-failure
+     depends_on:
+       - redis
+       - elasticsearch
+       - kibana
+     ports:
+       - "9090:9090"
+     env_file:
+       - ./elastic_module/.env
+     environment:
+       - ELASTICSEARCH_BASE_URL=http://elasticsearch:9200
+     command: bash -c "npm run build && npm run start:debug"
+     volumes:
+       - .files:/diskStorage
+       - ./elastic_module:/app
+
+volumes:
+  db-data:
+  esdata:
+  cache:
+  elasticsearch_data:
+
+networks:
+  inpoint:
+    driver: bridge

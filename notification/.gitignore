@@ -1,0 +1,7 @@
+.*postgres
+!.gitignore
+!.babelrc
+!.eslintrc.json
+*.swp
+
+node_modules/

@@ -1,0 +1,28 @@
+.ant-modal-title {
+    font-size: 32px !important;
+}
+
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+.addbutton {
+    color: #1F598E !important;
+    border-color: #1F598E !important;
+}
+
+․itemContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.nextButton {
+    background-color: #1F598E !important;
+    margin-top: 32px;
+}
+
+.nextButton:disabled {
+    background-color: #d9d9d9 !important;
+}

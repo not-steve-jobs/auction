@@ -1,0 +1,55 @@
+/* 100: Thin
+200: Extra Light (Ultra Light)
+300: Light
+400: Regular (Normal)
+500: Medium
+600: Semi Bold (Demi Bold)
+700: Bold
+800: Extra Bold (Ultra Bold)
+900: Black (Heavy) */
+
+@font-face {
+  font-family: "Mardoto";
+  font-style: normal;
+  font-weight: 100;
+  font-display: fallback;
+  src: url("../fonts/Mardoto-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mardoto";
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("../fonts/Mardoto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mardoto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("../fonts/Mardoto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Mardoto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: fallback;
+  src: url("../fonts/Mardoto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Mardoto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("../fonts/Mardoto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mardoto";
+  font-style: normal;
+  font-weight: 900;
+  font-display: fallback;
+  src: url("../fonts/Mardoto-Black.ttf") format("truetype");
+}

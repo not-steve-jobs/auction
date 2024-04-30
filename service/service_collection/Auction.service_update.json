@@ -1,0 +1,1080 @@
+{
+	"info": {
+		"_postman_id": "c47093aa-1cf0-4e58-8ee3-a4039e814aec",
+		"name": "Auction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22365198"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Narek Petrosyan\",\r\n    \"email\": \"nr.petrosyan96@gmail.com\"\r\n    // \"phone\": \"+37494691515\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/signUp",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verification Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiJuci5wZXRyb3N5YW45NkBnbWFpbC5jb20iLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInN0ZXAiOjEsInN0YXJ0X3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjQ5Ljg5OFoiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJpYXQiOjE2OTYwMjAxMDksImV4cCI6MTY5NjAyMDcwOX0.NyrBqAQPi2CEe1E6U9Kyb9xg8eFCczCloHbLBkzxsfA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"verification_code\": \"iics0E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/code",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pass",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiJuci5wZXRyb3N5YW45NkBnbWFpbC5jb20iLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsImV4cGlyYXRpb25fdGltZSI6IjIwMjMtMDktMjlUMjA6NDI6MjUuMDU1WiIsInN0ZXAiOjIsImlhdCI6MTY5NjAyMDE0NSwiZXhwIjoxNjk2MDIwNzQ1fQ.7ZBaSILOZii1y4QloFSnqMJWQgWDPxh0QJL8Iim0e78",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"F5de3d4cb5\",\r\n    \"repeat_password\": \"F5de3d4cb5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/pass",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"pass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInN0YXJ0X3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJzdGVwIjoxLCJpYXQiOjE2OTYwMjAwOTgsImV4cCI6MTY5NjAyMDY5OH0.xwurzwIl-86ouIFqyAUE0y1H7cFTlN6ZVVG1OYXpo40",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/resend",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"resend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"user_name\": \"+37494691515\",\n    \"user_name\": \"nr.petrosyan96@gmail.com\",\n    \"password\": \"F5de3d4cb5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/login",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "glass",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "glass for hummer",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "sale_type",
+									"value": "oneTimeSale",
+									"type": "text"
+								},
+								{
+									"key": "extra_data",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "available",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/ghost/Downloads/images/adler.jpg"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/ghost/Downloads/images/black-forest-wallpaper.jpg"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/ghost/Downloads/images/Schutzstaffel_ProtectionSquads.jpeg"
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/home/ghost/Downloads/mp4/YereOne_Project_Yars_Sarin_a.mp4"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[start_time]",
+									"value": "2023-10-14 21:43:22",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[end_time]",
+									"value": "2023-10-15 21:43:22",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[start_price]",
+									"value": "11.85",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[quantity]",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[direct_sales_price]",
+									"value": "12",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[min_insured_price]",
+									"value": "11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[min_allowed_price]",
+									"value": "11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "auction[automatic_acceptance_price]",
+									"value": "15",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "one_time_sale[start_time]",
+									"value": "2023-10-16 21:43:22",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "one_time_sale[end_time]",
+									"value": "2023-10-18 21:43:22",
+									"type": "text"
+								},
+								{
+									"key": "one_time_sale[start_price]",
+									"value": "12.99",
+									"type": "text"
+								},
+								{
+									"key": "one_time_sale[quantity]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "one_time_sale[min_allowed_price]",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "one_time_sale[automatic_acceptance_price]",
+									"value": "14.99",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "discount[quantity]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "discount[percent]",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "related_products[parent_id]",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "related_products[child_id]",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping[city_id]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping[postal_code_id]",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping[address]",
+									"value": "5-14-26",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{productHost}}product/",
+							"host": [
+								"{{productHost}}product"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Products          /?search=hummer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{productHost}}product/list",
+							"host": [
+								"{{productHost}}product"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ProductById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}product/QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+							"host": [
+								"{{productHost}}product"
+							],
+							"path": [
+								"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}products/categories?search=n",
+							"host": [
+								"{{productHost}}products"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By Parent Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}products/category/WmwycHpaaEUwdWRFREgyRGJTc3VSUT09",
+							"host": [
+								"{{productHost}}products"
+							],
+							"path": [
+								"category",
+								"WmwycHpaaEUwdWRFREgyRGJTc3VSUT09"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product(s)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTY0OTI0MzZ9.1XTHEH_eUnFXAtpS_xDX2JxS9hAzXrq2UrczCIXMHyU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\", \"Z1RicWRJMk10aW0xdTVjRVQyS3d5QT09\", \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\", \"dnBsUHQyNGhva01DbXk2U0ZTdGNVZz09\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productHost}}product/delete",
+							"host": [
+								"{{productHost}}product"
+							],
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Password Recovery",
+			"item": [
+				{
+					"name": "Check user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_name\": \"+37494691515\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/checkUser",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"checkUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJlbWFpbCI6bnVsbCwicGhvbmUiOiIrMzc0OTQ2OTE1MTUiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTEwLTA0VDE0OjA2OjEyLjQwN1oiLCJzdGVwIjoxLCJpYXQiOjE2OTY0MjgzNzIsImV4cCI6MTY5NjQyODk3Mn0.OPWFesLB1o0WSJ4FCZdkwQk2pRVDry9mvOjOu9f4nHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"+37494691515\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/notification",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJzdGVwIjoyLCJzdGFydF90aW1lIjoiMjAyMy0xMC0wNFQxNDowMTozMC4yODNaIiwiZXhwaXJhdGlvbl90aW1lIjoiMjAyMy0xMC0wNFQxMzo1ODowNC42NzFaIiwicGhvbmUiOiIrMzc0OTQ2OTE1MTYiLCJpYXQiOjE2OTY0MjgwOTAsImV4cCI6MTY5NjQyODY5MH0.3k869Cx19rW2fV4gwd12Xo3w7dTFxSnouH_lBVlrfNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"verification_code\": \"ajKNt3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/code",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IiszNzQ5NDY5MTUxNiIsInN0ZXAiOjIsInVzZXJfbmFtZSI6IiszNzQ5NDY5MTUxNSIsInN0YXJ0X3RpbWUiOiIyMDIzLTEwLTA0VDEzOjU4OjA0LjY3MVoiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTEwLTA0VDEzOjU4OjA0LjY3MVoiLCJpYXQiOjE2OTY0Mjc4ODQsImV4cCI6MTY5NjQyODQ4NH0.eT7mUmD0YEp_VhtzcvgG9ti4TVa9hE1U5r_mWZ2oL7k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}auth/recovery/resend",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"resend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTEwLTA0VDE0OjAxOjQ5LjcwOVoiLCJzdGVwIjozLCJpYXQiOjE2OTY0MjgxMDksImV4cCI6MTY5NjQyODcwOX0.GL_nhsHIfA3batSAeRF8c2UKiE3eoUrP8K7uNadFhSs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"F5de3d4cb5\",\n    \"repeat_password\": \"F5de3d4cb5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/pass",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"pass"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "Get Primary Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{service}}services/categories",
+							"host": [
+								"{{service}}services"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{service}}services/getMyServices",
+							"host": [
+								"{{service}}services"
+							],
+							"path": [
+								"getMyServices"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "draft",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{service}}services/getAllServices",
+							"host": [
+								"{{service}}services"
+							],
+							"path": [
+								"getAllServices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Portfolios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{service}}services/getMyPortfolios",
+							"host": [
+								"{{service}}services"
+							],
+							"path": [
+								"getMyPortfolios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories By ParentId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{service}}services/category/RFBrUXlFTG5MTVduZVcxbzV6cFhIdz09",
+							"host": [
+								"{{service}}services"
+							],
+							"path": [
+								"category",
+								"RFBrUXlFTG5MTVduZVcxbzV6cFhIdz09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories By ChildID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{service}}services/mainCategoryPath/RFBrUXlFTG5MTVduZVcxbzV6cFhIdz09",
+							"host": [
+								"{{service}}services"
+							],
+							"path": [
+								"mainCategoryPath",
+								"RFBrUXlFTG5MTVduZVcxbzV6cFhIdz09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInN0YXJ0X3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJzdGVwIjoxLCJpYXQiOjE2OTYwMjAwOTgsImV4cCI6MTY5NjAyMDY5OH0.xwurzwIl-86ouIFqyAUE0y1H7cFTlN6ZVVG1OYXpo40",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "glass for hummer",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "RFBrUXlFTG5MTVduZVcxbzV6cFhIdz09",
+									"type": "text"
+								},
+								{
+									"key": "extra_data",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/vahagn/Desktop/LIVE_AUCTION/.files/Screenshot from 2023-10-16 14-08-23.png"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/coder/Desktop/2.jpeg",
+									"disabled": true
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/home/coder/Desktop/Բաքուն Բակո Սահակյանին, Արկադի Ղուկասյանին և Դավիթ Իշխանյանին չորս ամսով կալանավորեց.mp4",
+									"disabled": true
+								},
+								{
+									"key": "contacts[contact_person]",
+									"value": "Vahan",
+									"type": "text"
+								},
+								{
+									"key": "contacts[phones]",
+									"value": "+37494691515",
+									"type": "text"
+								},
+								{
+									"key": "contacts[phones]",
+									"value": "+37494117080",
+									"type": "text"
+								},
+								{
+									"key": "contacts[emails]",
+									"value": "nr.petrosyan96@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "contacts[emails]",
+									"value": "narekpetrosyannode@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "contacts[links][0][link]",
+									"value": "https://www.facebook.com/",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "contacts[links][0][social_platform]",
+									"value": "Facebook",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "contacts[links][1][link]",
+									"value": "https://www.instagram.com/",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "contacts[links][1][social_platform]",
+									"value": "Instagram",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "portfolioIds",
+									"value": "QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+									"type": "text"
+								},
+								{
+									"key": "portfolioIds",
+									"value": "bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09",
+									"type": "text"
+								},
+								{
+									"key": "portfolioIds",
+									"value": "WW1KMHIwVWtxMVBzVy9jK2p4bzhQdz09",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{service}}services",
+							"host": [
+								"{{service}}services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Portfolio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "glass for aaaaaaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/vahagn/Desktop/LIVE_AUCTION/.files/9faf0951-6d4d-48dc-8749-0513404247f4.png"
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/home/coder/Desktop/Բաքուն Բակո Սահակյանին, Արկադի Ղուկասյանին և Դավիթ Իշխանյանին չորս ամսով կալանավորեց.mp4",
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/coder/Desktop/2.jpeg",
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/coder/Desktop/3.jpeg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{service}}services/portfolio",
+							"host": [
+								"{{service}}services"
+							],
+							"path": [
+								"portfolio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

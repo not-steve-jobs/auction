@@ -1,0 +1,1109 @@
+{
+	"info": {
+		"_postman_id": "81ac56b1-53ff-42a2-8304-c98cac59d958",
+		"name": "Auction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14487765",
+		"_collection_link": "https://winter-meadow-44775.postman.co/workspace/My-Workspace~6c39a1b1-603e-4ecc-8b0d-22171d225808/collection/14487765-81ac56b1-53ff-42a2-8304-c98cac59d958?action=share&source=collection_link&creator=14487765"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Narek Petrosyan\",\r\n    \"email\": \"nr.petrosyan96@gmail.com\"\r\n    // \"phone\": \"+37494691515\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/signUp",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verification Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiJuci5wZXRyb3N5YW45NkBnbWFpbC5jb20iLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInN0ZXAiOjEsInN0YXJ0X3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjQ5Ljg5OFoiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJpYXQiOjE2OTYwMjAxMDksImV4cCI6MTY5NjAyMDcwOX0.NyrBqAQPi2CEe1E6U9Kyb9xg8eFCczCloHbLBkzxsfA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"verification_code\": \"iics0E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/code",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pass",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiJuci5wZXRyb3N5YW45NkBnbWFpbC5jb20iLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsImV4cGlyYXRpb25fdGltZSI6IjIwMjMtMDktMjlUMjA6NDI6MjUuMDU1WiIsInN0ZXAiOjIsImlhdCI6MTY5NjAyMDE0NSwiZXhwIjoxNjk2MDIwNzQ1fQ.7ZBaSILOZii1y4QloFSnqMJWQgWDPxh0QJL8Iim0e78",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"F5de3d4cb5\",\r\n    \"repeat_password\": \"F5de3d4cb5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/pass",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"pass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsInN0YXJ0X3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTA5LTI5VDIwOjQxOjM4Ljg1OVoiLCJzdGVwIjoxLCJpYXQiOjE2OTYwMjAwOTgsImV4cCI6MTY5NjAyMDY5OH0.xwurzwIl-86ouIFqyAUE0y1H7cFTlN6ZVVG1OYXpo40",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/resend",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"resend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"user_name\": \"+37494691515\",\n    \"user_name\": \"nr.petrosyan96@gmail.com\",\n    \"password\": \"F5de3d4cb5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/login",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "draft",
+									"description": "draft",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[name]",
+									"value": "glass",
+									"type": "text"
+								},
+								{
+									"key": "product[category_id]",
+									"value": "bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09",
+									"type": "text"
+								},
+								{
+									"key": "product[desc]",
+									"value": "glass for hummer",
+									"type": "text"
+								},
+								{
+									"key": "product[sale_type]",
+									"value": "oneTimeSale",
+									"description": "oneTimeSale",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[extra_data][0][name]",
+									"value": "color",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[extra_data][0][value]",
+									"value": "green",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][duration]",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][start_time]",
+									"value": "2023-10-27 21:43:22",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][start_price]",
+									"value": "11.85",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][quantity]",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][direct_sales_price]",
+									"value": "11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][min_insured_price]",
+									"value": "11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][min_allowed_price]",
+									"value": "11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[auction][automatic_acceptance_price]",
+									"value": "15",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[one_time_sale][start_time]",
+									"value": "2023-10-27 21:43:22",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[one_time_sale][start_price]",
+									"value": "12.99",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[one_time_sale][quantity]",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[one_time_sale][min_allowed_price]",
+									"value": "11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[one_time_sale][automatic_acceptance_price]",
+									"value": "14.99",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[discount][0][quantity]",
+									"value": "5",
+									"description": "these items in same array          discount[{     quantity     }]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[discount][1][quantity]",
+									"value": "8",
+									"description": "these items in same array          discount[{     quantity     }]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[discount][0][percent]",
+									"value": "20",
+									"description": "these items in same array                discount[{     percent     }]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[discount][1][percent]",
+									"value": "19",
+									"description": "these items in same array                discount[{     percent     }]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[related_products][0][child_id]",
+									"value": "bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09",
+									"description": "these items in same array           related_products[{child_id}]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "product[related_products][1][child_id]",
+									"value": "bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09",
+									"description": "these items in same array           related_products[{child_id}]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping[can_be_approached]",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "shipping[region_id]",
+									"value": "bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09",
+									"description": "2",
+									"type": "text"
+								},
+								{
+									"key": "shipping[city_id]",
+									"value": "QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+									"description": "1",
+									"type": "text"
+								},
+								{
+									"key": "shipping[postal_code_id]",
+									"value": "QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+									"description": "1",
+									"type": "text"
+								},
+								{
+									"key": "shipping[address]",
+									"value": "5-14-26",
+									"type": "text"
+								},
+								{
+									"key": "shipping[client_approach][preferred_days][0]",
+									"value": "mon",
+									"type": "text"
+								},
+								{
+									"key": "shipping[client_approach][preferred_days][1]",
+									"value": "tue",
+									"type": "text"
+								},
+								{
+									"key": "shipping[client_approach][preferred_hours][0]",
+									"value": "14:02:42",
+									"type": "text"
+								},
+								{
+									"key": "shipping[client_approach][preferred_hours][1]",
+									"value": "14:04:44",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"description": "templates",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping[seller_delivery]",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][name]",
+									"value": "First Template",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][template]",
+									"value": "false",
+									"description": "always false",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][place_data][0][name]",
+									"value": "Yerevan",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][place_data][0][id]",
+									"value": "QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+									"description": "1",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][place_data][0][cities][0][name]",
+									"value": "Arabkir",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][place_data][0][cities][0][id]",
+									"value": "QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+									"description": "1",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][place_data][0][cities][1][name]",
+									"value": "Argavand",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][place_data][0][cities][1][id]",
+									"value": "bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09",
+									"description": "2",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][place_data][0][all_cities]",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][days]",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][0][price]",
+									"value": "1256.99",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"description": "second item of array",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping[shipping_templates][1][name]",
+									"value": "Second Template",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][template]",
+									"value": "false",
+									"description": "always false",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][place_data][0][name]",
+									"value": "Yerevan",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][place_data][0][id]",
+									"value": "QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][place_data][0][cities][0][name]",
+									"value": "K’anak’erravan",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][place_data][0][cities][0][id]",
+									"value": "WmwycHpaaEUwdWRFREgyRGJTc3VSUT09",
+									"description": "4",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][place_data][0][cities][1][name]",
+									"value": "Jrashen",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][place_data][0][cities][1][id]",
+									"value": "WW1KMHIwVWtxMVBzVy9jK2p4bzhQdz09",
+									"description": "3",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][place_data][0][all_cities]",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][days]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_templates][1][price]",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping[shipping_template_ids][ids][0]",
+									"value": "azI1WFNUbk1iYytqYnNpUWJaZXIyUT09",
+									"type": "text"
+								},
+								{
+									"key": "shipping[shipping_template_ids][ids][1]",
+									"value": "azI1WFNUbk1iYytqYnNpUWJaZXIyUT09",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/ghost/Downloads/images/4k-rain-wallpapers.jpg",
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/ghost/Downloads/images/adler.jpg",
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/home/ghost/Downloads/images/Adler-SS.jpg",
+									"disabled": true
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/home/ghost/Downloads/mp4/jelfish1920x1080-30fps.mp4",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{productHost}}/",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Products          /?search=hummer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product JSON without images and video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"available\",\n  \"product\": {\n    \"name\": \"admin\",\n    \"category_id\": \"bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09\",\n    \"sale_type\": \"auction\",\n    \"extra_data\": [],\n    \"auction\": {\n      \"duration\": 4,\n      \"start_time\": \"2023-11-02 13:26:00\",\n      \"start_price\": \"12\",\n      \"quantity\": \"123\",\n      \"direct_sales_price\": \"123\",\n      \"min_insured_price\": \"123\",\n      \"min_allowed_price\": \"12\",\n      \"automatic_acceptance_price\": \"123\"\n    },\n    \"related_products\": []\n  },\n  \"shipping\": {\n    \"can_be_approached\": true,\n    \"region_id\": \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\",\n    \"city_id\": \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\",\n    \"postal_code_id\": \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\",\n    \"address\": \"5-14-26\",\n    \"client_approach\": {\n      \"preferred_days\": [\n        \"mon\",\n        \"tue\"\n      ],\n      \"preferred_hours\": [\n        \"07:26:17\",\n        \"23:26:20\"\n      ]\n    },\n    \"seller_delivery\": true,\n    \"shipping_templates\": [\n      {\n        \"name\": \"First Template\",\n        \"template\": \"false\",\n        \"place_data\": [\n          {\n            \"name\": \"Yerevan\",\n            \"id\": \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\",\n            \"cities\": [\n              {\n                \"name\": \"Arabkir\",\n                \"id\": \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\"\n              },\n              {\n                \"name\": \"Argavand\",\n                \"id\": \"bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09\"\n              }\n            ],\n            \"all_cities\": false\n          }\n        ],\n        \"days\": \"10\",\n        \"price\": \"1256.99\"\n      }\n    ]\n    // ,\n    // \"shipping_template_ids\": {\n    //   \"ids\": [\n    //     \"azI1WFNUbk1iYytqYnNpUWJaZXIyUT09\",\n    //     \"azI1WFNUbk1iYytqYnNpUWJaZXIyUT09\"\n    //   ]\n    // }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ProductById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}/QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}/categories",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Regions",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}/cities/NDQydWQ0bnlML3RiUzNqaWtHYno3QT09",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								"cities",
+								"NDQydWQ0bnlML3RiUzNqaWtHYno3QT09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Postal Codes By City Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}/postalCodes/WmwycHpaaEUwdWRFREgyRGJTc3VSUT09",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								"postalCodes",
+								"WmwycHpaaEUwdWRFREgyRGJTc3VSUT09"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product(s)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTY0OTI0MzZ9.1XTHEH_eUnFXAtpS_xDX2JxS9hAzXrq2UrczCIXMHyU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\", \"Z1RicWRJMk10aW0xdTVjRVQyS3d5QT09\", \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\", \"dnBsUHQyNGhva01DbXk2U0ZTdGNVZz09\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productHost}}product/delete",
+							"host": [
+								"{{productHost}}product"
+							],
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Template",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"First template\",\n    \"template\": true,\n    \"place_data\": [{\n        \"name\": \"yerevan\",\n        \"id\": \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\",\n        \"cities\": [{\"name\": \"Arabkir\", \"id\": \"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09\"}, {\"name\": \"Argavand\", \"id\": \"bTkwTUJwd3pPNXVqRGxIZ2xwRHZhZz09\"}],\n        \"all_cities\": false\n    }],\n    \"days\": 10,\n    \"price\": 1256.25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productHost}}/shipping/addTemplate",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								"shipping",
+								"addTemplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Templates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{productHost}}/shipping/templates",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								"shipping",
+								"templates"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Template By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJOYXJlayBQZXRyb3N5YW4iLCJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJwaG9uZSI6IiszNzQ5NDY5MTUxNSIsImlkIjoiUVRsRmR6ZHlOVzFHTlVWUE5GVTVkV3BhWVdZNVFUMDkiLCJpYXQiOjE2OTcyMTMzNDJ9.-SDEFyD0FZS03Js9zUJ0O9uw_A0jEco4PrenB6urC7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{productHost}}/shipping/templateById/QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09",
+							"host": [
+								"{{productHost}}"
+							],
+							"path": [
+								"shipping",
+								"templateById",
+								"QTlFdzdyNW1GNUVPNFU5dWpaYWY5QT09"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Password Recovery",
+			"item": [
+				{
+					"name": "Check user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_name\": \"+37494691515\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/checkUser",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"checkUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJlbWFpbCI6bnVsbCwicGhvbmUiOiIrMzc0OTQ2OTE1MTUiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTEwLTA0VDE0OjA2OjEyLjQwN1oiLCJzdGVwIjoxLCJpYXQiOjE2OTY0MjgzNzIsImV4cCI6MTY5NjQyODk3Mn0.OPWFesLB1o0WSJ4FCZdkwQk2pRVDry9mvOjOu9f4nHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"+37494691515\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/notification",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJzdGVwIjoyLCJzdGFydF90aW1lIjoiMjAyMy0xMC0wNFQxNDowMTozMC4yODNaIiwiZXhwaXJhdGlvbl90aW1lIjoiMjAyMy0xMC0wNFQxMzo1ODowNC42NzFaIiwicGhvbmUiOiIrMzc0OTQ2OTE1MTYiLCJpYXQiOjE2OTY0MjgwOTAsImV4cCI6MTY5NjQyODY5MH0.3k869Cx19rW2fV4gwd12Xo3w7dTFxSnouH_lBVlrfNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"verification_code\": \"ajKNt3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/code",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IiszNzQ5NDY5MTUxNiIsInN0ZXAiOjIsInVzZXJfbmFtZSI6IiszNzQ5NDY5MTUxNSIsInN0YXJ0X3RpbWUiOiIyMDIzLTEwLTA0VDEzOjU4OjA0LjY3MVoiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTEwLTA0VDEzOjU4OjA0LjY3MVoiLCJpYXQiOjE2OTY0Mjc4ODQsImV4cCI6MTY5NjQyODQ4NH0.eT7mUmD0YEp_VhtzcvgG9ti4TVa9hE1U5r_mWZ2oL7k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}auth/recovery/resend",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"resend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIrMzc0OTQ2OTE1MTUiLCJleHBpcmF0aW9uX3RpbWUiOiIyMDIzLTEwLTA0VDE0OjAxOjQ5LjcwOVoiLCJzdGVwIjozLCJpYXQiOjE2OTY0MjgxMDksImV4cCI6MTY5NjQyODcwOX0.GL_nhsHIfA3batSAeRF8c2UKiE3eoUrP8K7uNadFhSs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"F5de3d4cb5\",\n    \"repeat_password\": \"F5de3d4cb5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}auth/recovery/pass",
+							"host": [
+								"{{host}}auth"
+							],
+							"path": [
+								"recovery",
+								"pass"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

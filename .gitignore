@@ -1,0 +1,14 @@
+notification/node_modules
+authentication/node_modules
+react/node_modules
+ssl
+node_modules
+/node_modules
+/authentication/node_modules
+/notification/node_modules
+/react/node_modules
+.idea
+elastic_module/dist
+.files/*/*
+!.files/serviceImageArchive/auction_project.png
+.files/serviceVideoArchive/*

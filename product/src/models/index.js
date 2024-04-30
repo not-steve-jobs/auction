@@ -1,0 +1,12 @@
+export { default as ProductsModel } from './products.model';
+export { default as FilesModel } from './files.model';
+export { default as OneTimeSalesModel } from './oneTimeSales.model';
+export { default as AuctionsModel } from './auctions.model';
+export { default as CategoriesModel } from './categories.model';
+export { default as DiscountsModel } from './discounts.model';
+export { default as RelatedProductsModel } from './relatedProducts.model';
+export { default as ShippingsModel } from './prodShipTemp.model';
+export { default as ShippingTemplatesModel } from './shippingTemplates.model';
+export { default as ProductLocationsModel } from './productLocations.model';
+export { default as ProdShipTempModel } from './prodShipTemp.model';
+export { default as UsersModel } from './users.model';

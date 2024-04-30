@@ -1,0 +1,21 @@
+.ant-popover {
+  @apply z-[999];
+}
+.ant-popover .ant-popover-content {
+  @apply relative left-[17px];
+}
+.ant-popover .ant-popover-inner {
+  @apply border border-[#B3B3B3] rounded-[3px];
+}
+.ant-popover-placement-bottomRight .ant-popover-arrow {
+  @apply w-0;
+}
+.ant-btn.ant-btn-sm {
+  @apply bg-[#1f598e] text-[#fff];
+}
+.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+  @apply bg-[#1f598e] text-[#fff];
+}
+.ant-btn-primary:disabled {
+  @apply bg-[#d9d9d9]  text-gray-800;
+}

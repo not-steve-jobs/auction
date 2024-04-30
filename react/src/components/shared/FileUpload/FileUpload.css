@@ -1,0 +1,28 @@
+.fileUploadButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 254px;
+  height: 178px;
+  border-radius: 8px;
+  background: rgba(168, 163, 167, 0.53);
+  padding-top: 0;
+  border: 0;
+  gap: 28px
+}
+
+.uploadTitle {
+  width: 254px;
+  height: 40px;
+  background: #F1F1F1;
+  border-radius: 8px 8px 0 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #1F598E;
+  font-size: 16px;
+  font-family: Mardoto;
+  font-weight: 500;
+  word-wrap: break-word;
+  gap: 4px;
+}
